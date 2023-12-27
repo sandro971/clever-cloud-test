@@ -3,8 +3,12 @@
 function bonus() : string
 {
     // TODO
-
-    return "";
+    switch(getenv("INSTANCE_TYPE")){
+        case "production":
+            return "*PROD*";
+        case "build":
+            return "*DEV*";
+    }
 }
 
 echo bonus();
